@@ -7,6 +7,7 @@ using System.Text;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
+using Open.Documents.Handlers;
 using Open.Documents.Resources;
 using OpenRasta.Configuration;
 using OpenRasta.Web;
@@ -26,6 +27,10 @@ namespace Open.Documents
                 .Uri("/contact-us?email={email}&comment={comment}")
                 .And.Uri("/contact-us/{email}/{comment}");
 
+            ResourceSpace.Has.Resource<SearchResults>()
+                .Uri("/search-results/searchresults")
+                .Handler<SearchResultsHandler>()
+                .RenderedByAspx("SearchResults.aspx");
             ResourceSpace.Uses.XmlDataContract();
         }
     }

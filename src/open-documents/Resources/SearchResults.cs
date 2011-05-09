@@ -8,5 +8,6 @@ namespace Open.Documents.Resources
     // search-results
     public class SearchResults
     {
+        public string ADocument { get; set; }
     }
 }

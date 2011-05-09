@@ -9,7 +9,13 @@ namespace Open.Documents.Handlers
     
     public class SearchResultsHandler
     {
-        public SearchResults Get(){
+        public SearchResults Post(string document)
+        {
+            return new SearchResults();
+        }
+        // querystring
+        public SearchResults Get (string querys)
+        {
             return new SearchResults();
         }
     }
