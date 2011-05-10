@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Configuration.cs" />
     <Compile Include="Handlers\ContactUsHandler.cs" />
+    <Compile Include="Handlers\ReturnCoffeMate.cs" />
     <Compile Include="Resources\ContactUs.cs" />
     <Compile Include="Handlers\SearchResultsHandler.cs" />
     <Compile Include="Resources\Home.cs" />

@@ -28,9 +28,10 @@ namespace Open.Documents
                 .And.Uri("/contact-us/{email}/{comment}");
 
             ResourceSpace.Has.Resource<SearchResults>()
-                .Uri("/search-results/searchresults")
+                .Uri("/search-results/{term}")
                 .Handler<SearchResultsHandler>()
                 .RenderedByAspx("SearchResults.aspx");
+
             ResourceSpace.Uses.XmlDataContract();
         }
     }

@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Open.Documents.Resources;
+using OpenRasta;
+using OpenRasta.Web;
 
 namespace Open.Documents.Handlers
 {
     
     public class SearchResultsHandler
     {
-        public SearchResults Post(string document)
+        public OperationResult Post(string term)
         {
-            return new SearchResults();
+            // 303
+            return new OperationResult.SeeOther()
+                       {
+                           RedirectLocation = new Uri("/search-results/{term}")
+                       };
         }
-        // querystring
-        public SearchResults Get (string querys)
+        
+        public OperationResult Get(string term)
         {
-            return new SearchResults();
+            if (term.Contains("coffee"))
+                return new ImATeapotOperationResult() { ResponseResource = new ReturnCoffeMate(term)};
+           return new OperationResult.OK { ResponseResource = new ReturnCoffeMate(term) };
         }
     }
 }

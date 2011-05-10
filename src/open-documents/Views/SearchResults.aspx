@@ -4,12 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    
+    <title> <%=Resource.ADocument %>></title>
 </head>
 <body>
     <form action="/search-results" method="post">
-    <input type=text name="documentname" />
-    <input type=submit>
+    <input type="text" name="documentname" />
+    <input type="submit" />
     </form>
 </body>
 </html>
